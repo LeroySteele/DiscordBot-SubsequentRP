@@ -14,8 +14,9 @@ module.exports = {
         ),
     async execute(interaction) {
         try {
-            await interaction.reply({
-                content: "Removing user from ticket", ephemeral: true,
+            await interaction.deferReply({ ephemeral: true });
+            await interaction.editReply({
+            	content: "Removing user from ticket", ephemeral: true,
             });
             if ((interaction.channel.parentId === idList.whitelistcategory) ||
                 (interaction.channel.parentId === idList.awaitinginterviewcategory ) ||
@@ -47,6 +48,9 @@ module.exports = {
                 });
             }
         } catch (err) {
+            await interaction.editReply({
+	            content: `An error has occurred, please try again later and if the problem persists contact admin. Code: Remove User.`, ephemeral: true,
+            });
             console.error(err);
         }
     }
