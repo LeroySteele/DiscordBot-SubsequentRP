@@ -9,8 +9,9 @@ module.exports = {
         .setDescription('Create initial message for ban appeal tickets'),
     async execute(interaction) {
         try {
-            await interaction.reply({
-                content: "Creating ban appeal message", ephemeral: true,
+            await interaction.deferReply({ ephemeral: true });
+            await interaction.editReply({
+            	content: "Creating ban appeal message", ephemeral: true,
             });
             if ( await interaction.member.roles.cache.some(role => role.id === idList.staffRole) ) {
                 if ( interaction.channelId === idList.banappealmessagechannel ) {
@@ -40,6 +41,9 @@ module.exports = {
                 });
             }
         } catch (err) {
+            await interaction.editReply({
+	            content: `An error has occurred, please try again later and if the problem persists contact admin. Code: Owner Ban.`, ephemeral: true,
+            });
             console.error(err);
         }
     }
