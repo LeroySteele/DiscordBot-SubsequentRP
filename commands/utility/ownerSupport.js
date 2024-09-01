@@ -10,8 +10,9 @@ module.exports = {
         .setDescription('Create initial message for support tickets'),
     async execute(interaction) {
         try {
-            await interaction.reply({
-                content: "Creating support message", ephemeral: true,
+            await interaction.deferReply({ ephemeral: true });
+            await interaction.editReply({
+            	content: "Creating support message", ephemeral: true,
             });
             if ( await interaction.member.roles.cache.some(role => role.id === idList.staffRole) ) {
                 if ( interaction.channelId === idList.supportmessagechannel ) {
@@ -83,6 +84,9 @@ module.exports = {
                 });
             }
         } catch (err) {
+            await interaction.editReply({
+	            content: `An error has occurred, please try again later and if the problem persists contact admin. Code: Owner Support.`, ephemeral: true,
+            });
             console.error(err);
         }
     }
