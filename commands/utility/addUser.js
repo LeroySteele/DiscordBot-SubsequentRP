@@ -14,7 +14,8 @@ module.exports = {
         ),
     async execute(interaction) {
         try {
-            await interaction.reply({
+            await interaction.deferReply({ ephemeral: true });
+            await interaction.editReply({
                 content: "Adding user to ticket", ephemeral: true,
             });
             if (    (interaction.channel.parentId === idList.whitelistcategory) ||
@@ -48,6 +49,9 @@ module.exports = {
                 });
             }
         } catch (err) {
+            await interaction.editReply({
+	            content: `An error has occurred, please try again later and if the problem persists contact admin. Code: Add User.`, ephemeral: true,
+            });
             console.error(err);
         }
     }
