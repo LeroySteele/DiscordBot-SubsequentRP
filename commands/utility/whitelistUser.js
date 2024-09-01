@@ -69,10 +69,11 @@ module.exports = {
         ),
     async execute(interaction) {
         try {
+            await interaction.deferReply({ ephemeral: true });
+            await interaction.editReply({
+            	content: "Whitelisting player", ephemeral: true,
+            });
             if (await interaction.member.roles.cache.some(role => role.id === idList.whitelistingstaffrole)) {
-                await interaction.reply({
-                    content: "Whitelisting player", ephemeral: true,
-                });
                 const botAvatar = await interaction.client.users.fetch(ids.CLIENT_ID);
                 //const user = await client.users.fetch(userid);//not used
                 const newish = interaction.options.get('new-to-rp').value;
@@ -111,6 +112,9 @@ module.exports = {
                 });
             }
         } catch (err) {
+            await interaction.editReply({
+	            content: `An error has occurred, please try again later and if the problem persists contact admin. Code: Whitelist User.`, ephemeral: true,
+            });
             console.error(err);
         }
     }
