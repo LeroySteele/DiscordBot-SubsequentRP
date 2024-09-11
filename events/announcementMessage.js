@@ -8,7 +8,6 @@ module.exports = {
         try {
             if ( (message.channel.id === idList.ownerannouncechannel) ) {
                 const mess = message.content;
-                //const chan = message.channel;
                 if (mess.includes(`<@&` + idList.whitelistedrole + `>`)){
                     const whitechan = message.client.channels.cache.find(ch => ch.id === whitelistedannouncechannel);   
                     await whitechan.send({content: mess});
@@ -26,7 +25,6 @@ module.exports = {
                     .setImage( botAvatar.displayAvatarURL() )
                     .setFooter({text: 'Subsequent RP'});
                     await subchan.send({embeds: [subEmbed]});
-                    //await unwhitechan.send({content: mess});
                     await message.delete();
                 }
             }
