@@ -8,7 +8,8 @@ module.exports = {
 		if ( interaction.isButton() ) {
 			if (interaction.customId == "closeChannel") {
                 try {
-                    await interaction.reply({
+                    await interaction.deferReply({ ephemeral: true });
+                    await interaction.editReply({
                         content: "Deleting ticket and creating a transcript", ephemeral: true,
                     });
                     const mes = await interaction.channel.messages.fetch();
@@ -44,6 +45,9 @@ module.exports = {
                         await interaction.editReply({ content: `You are not allowed to close this channel, as this isn't a ticket`, ephemeral: true });
                     };
                 } catch (err) {
+                    await interaction.editReply({
+                        content: `An error has occurred, please try again later and if the problem persists contact a staff member. Code: Button close ticket.`, ephemeral: true,
+                    });
                     console.error(err);
                 }
             }
