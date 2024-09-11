@@ -8,7 +8,8 @@ module.exports = {
 		if ( interaction.isButton() ) {
 			if (interaction.customId == "whitebutton") {
                 try {
-                    await interaction.reply({
+                    await interaction.deferReply({ ephemeral: true });
+                    await interaction.editReply({
                         content: "Creating whitelist ticket", ephemeral: true,
                     });
                     const botAvatar = await interaction.client.users.fetch(ids.CLIENT_ID);
@@ -68,6 +69,9 @@ module.exports = {
                         )   
                     );
                 } catch (err) {
+                    await interaction.editReply({
+                        content: `An error has occurred, please try again later and if the problem persists contact a staff member. Code: Button whitelisting ticket.`, ephemeral: true,
+                    });
                     console.error(err);
                 }
             }
