@@ -8,7 +8,8 @@ module.exports = {
 		if ( interaction.isButton() ) {
 			if (interaction.customId == "applications") {
                 try {
-                    await interaction.reply({
+                    await interaction.deferReply({ ephemeral: true });
+                    await interaction.editReply({
                         content: "Creating an application ticket", ephemeral: true,
                     });
                     const botAvatar = await interaction.client.users.fetch(ids.CLIENT_ID);
@@ -92,12 +93,16 @@ module.exports = {
                         )   
                     );
                 } catch (err) {
+                    await interaction.editReply({
+                        content: `An error has occurred, please try again later and if the problem persists contact a staff member. Code: Button application.`, ephemeral: true,
+                    });
                     console.error(err);
                 }
             } else if (interaction.customId == "businessChannel") {
                 try {
-                    await interaction.reply({
-                        content: "Sending Business application", ephemeral: true,
+                    await interaction.deferReply({ ephemeral: true });
+                    await interaction.editReply({
+                        content: "Sending business application", ephemeral: true,
                     });
                     const botAvatar = await interaction.client.users.fetch(ids.CLIENT_ID);
                     const businessEmbed = new EmbedBuilder()
@@ -109,11 +114,15 @@ module.exports = {
                         embeds: [businessEmbed] 
                     });
                 } catch (err) {
+                    await interaction.editReply({
+                        content: `An error has occurred, please try again later and if the problem persists contact a staff member. Code: Button business application.`, ephemeral: true,
+                    });
                     console.error(err);
                 }
             } else if (interaction.customId == "gangChannel") {
                 try {
-                    await interaction.reply({
+                    await interaction.deferReply({ ephemeral: true });
+                    await interaction.editReply({
                         content: "Sending gang application", ephemeral: true,
                     });
                     const botAvatar = await interaction.client.users.fetch(ids.CLIENT_ID);
@@ -126,6 +135,9 @@ module.exports = {
                         embeds: [gangEmbed] 
                     });
                 } catch (err) {
+                    await interaction.editReply({
+                        content: `An error has occurred, please try again later and if the problem persists contact a staff member. Code: Button gang application.`, ephemeral: true,
+                    });
                     console.error(err);
                 }
             }
