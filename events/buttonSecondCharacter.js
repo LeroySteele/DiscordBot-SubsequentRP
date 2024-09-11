@@ -8,7 +8,8 @@ module.exports = {
 		if ( interaction.isButton() ) {
 			if (interaction.customId == "secondcharacter") {
                 try {
-                    await interaction.reply({
+                    await interaction.deferReply({ ephemeral: true });
+                    await interaction.editReply({
                         content: "Creating ticket for a 2nd character application", ephemeral: true,
                     });
                     const botAvatar = await interaction.client.users.fetch(ids.CLIENT_ID);
@@ -70,6 +71,9 @@ module.exports = {
 
 
                 } catch (err) {
+                    await interaction.editReply({
+                        content: `An error has occurred, please try again later and if the problem persists contact a staff member. Code: Button 2nd application.`, ephemeral: true,
+                    });
                     console.error(err);
                 }
             }
