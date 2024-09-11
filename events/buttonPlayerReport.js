@@ -70,7 +70,7 @@ module.exports = {
                     );
                 } catch (err) {
                     await interaction.editReply({
-                        content: `An error has occurred, please try again later and if the problem persists contact a staff member. Code: Button application.`, ephemeral: true,
+                        content: `An error has occurred, please try again later and if the problem persists contact a staff member. Code: Button player report.`, ephemeral: true,
                     });
                     console.error(err);
                 }
