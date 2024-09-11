@@ -75,7 +75,6 @@ module.exports = {
             });
             if (await interaction.member.roles.cache.some(role => role.id === idList.whitelistingstaffrole)) {
                 const botAvatar = await interaction.client.users.fetch(ids.CLIENT_ID);
-                //const user = await client.users.fetch(userid);//not used
                 const newish = interaction.options.get('new-to-rp').value;
                 const underage = interaction.options.get('age').value;
                 const chan = interaction.options.get('channel').value;
