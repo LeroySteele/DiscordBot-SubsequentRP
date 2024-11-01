@@ -1,3 +1,6 @@
+// A messege is sent with a button, the button can be used by users to open a ban appeal ticket
+// This command can only be used by administrators and only in a certain channel (ensures organisation)
+
 const { SlashCommandBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder, EmbedBuilder } = require('discord.js');
 const idList = require('../../data/idList');
 const ids = require('../../data/ids');
