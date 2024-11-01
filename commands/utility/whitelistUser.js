@@ -1,3 +1,5 @@
+//Once a user goes through the application process to join the community, administrators can use this command to grant the user with roles and permissions to access the rest of the server.
+
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const idList = require('../../data/idList');
 const ids = require('../../data/ids.js');
