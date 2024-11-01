@@ -2,7 +2,7 @@
 
 This is a discord bot for a private FiveM GTA RP server used to automatically manage users, roles and all linked actions.
 This bot is registered on Discord Developer Portal, uses mongoDB Atlas Database for online storage and was hosted on Discloud for 24/7 accessibility.
-It handles custom slash commands, custom event listeners, an activity based level system and birthday notifications.
+It handles custom slash commands and custom event listeners with an indepth ticket system and posts community announcements. 
 
 ### Commands to run in console during setup
 - npm init -y
@@ -15,7 +15,7 @@ It handles custom slash commands, custom event listeners, an activity based leve
 - npm i fs
   
 ## Data folder
-Contains the discord ID's for the categories, channels, roles as well as the database login information. 
+Contains the discord ID's for the categories, channels and roles.
 
 
 ## Commands folder
@@ -23,4 +23,4 @@ Register the slash commands by running 'node deploy-commands.js' in console then
 
 
 ## Events folder
-Contains the custom events to preform certain desired actions relating to members joinging/leaving, messege reactions and messeges being sent in certain channels. 
+Contains the custom events to preform certain desired actions relating to posting announcement messeges and sending the initial messeges with buttons when users can open the ticket types they desire.
