@@ -13,11 +13,7 @@ It handles custom slash commands, custom event listeners, an activity based leve
 - npm i @discordjs/rest
 - npm i @discordjs/builders
 - npm i fs
-- npm i mongodb
-- npm i mongoose
-- npm i -–save node-cron
   
-
 ## Data folder
 Contains the discord ID's for the categories, channels, roles as well as the database login information. 
 
