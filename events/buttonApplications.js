@@ -1,3 +1,5 @@
+// Users can click the button to open an application ticket, the corresponding permissions will be granted and a messege will be sent in that new ticket
+
 const { Events, EmbedBuilder, PermissionsBitField, ChannelType } = require('discord.js');
 const idList = require('../data/idList');
 const ids = require('../data/ids');
