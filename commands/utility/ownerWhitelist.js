@@ -1,3 +1,6 @@
+// A messege is sent with a button, the button can be used by users to open a whitelisting ticket
+// This command can only be used by administrators and only in a certain channel (ensures organisation)
+
 const { SlashCommandBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
 const { EmbedBuilder } = require('@discordjs/builders');
 const idList = require('../../data/idList');
