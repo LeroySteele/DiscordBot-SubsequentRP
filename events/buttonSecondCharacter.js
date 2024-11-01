@@ -1,3 +1,5 @@
+// Users can click the button to open a ticket to apply for a second character, the corresponding permissions will be granted to the user and a messege will be sent in that new ticket
+
 const { Events, ButtonBuilder, ButtonStyle, ActionRowBuilder, EmbedBuilder, PermissionsBitField, ChannelType } = require('discord.js');
 const idList = require('../data/idList');
 const ids = require('../data/ids');
