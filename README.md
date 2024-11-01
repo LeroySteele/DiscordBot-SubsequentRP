@@ -23,4 +23,4 @@ Register the slash commands by running 'node deploy-commands.js' in console then
 
 
 ## Events folder
-Contains the custom events to preform certain desired actions relating to posting announcement messeges and sending the initial messeges with buttons when users can open the ticket types they desire.
+Contains the custom events to preform certain desired actions relating to posting announcement messeges and button event listeners when users open the ticket types they desire.
