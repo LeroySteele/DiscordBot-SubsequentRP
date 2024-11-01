@@ -1,3 +1,7 @@
+// When a user opens a ticket only that user and administrators will have access to the ticket/channel.
+// This command can remove access if certain users are not required within that ticket.
+// It first verifies it is a ticket based on the channel's parent category and then sends a messege stating which user has been removed.
+
 const { SlashCommandBuilder } = require('discord.js');
 const idList = require('../../data/idList');
 
