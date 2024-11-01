@@ -1,5 +1,5 @@
 // When the user clicks the button a ticket (channel) will be created. First all permissions are set to false then the user and admins each get the permissions they need to interact with the channel. 
-// The ticket's name includes the user's names to show ownership and they also get tagged so it's easy to locate. A template messege is then sent to show what the ticket is about.
+// The ticket's name includes the user's names to show ownership and they also get tagged so it's easy to locate. A template messege is then sent to show what the ticket is about (application ticket).
 // Additional button are sent for two additional templates (gang, business) and also a close button
 
 const { Events, EmbedBuilder, PermissionsBitField, ChannelType } = require('discord.js');
