@@ -1,3 +1,6 @@
+// Whenever a ticket is created a 'close' button is sent inside of it. Once the ticket has been used/ served its purpose then it can be closed.
+// Once the button is clicked a transcript is created and sent to it's corresponding log channel, as well as information about the ticket.
+
 const { Events, } = require('discord.js');
 const discordTranscripts = require('discord-html-transcripts');
 const idList = require('../data/idList');
