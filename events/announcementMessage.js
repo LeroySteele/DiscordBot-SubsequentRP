@@ -1,3 +1,5 @@
+// When a messege is sent in the anounce channel, the bot will re-send the messege in the announcement channel for the server to see (bot will be the author)
+
 const { Events, EmbedBuilder, PermissionsBitField, ChannelType } = require('discord.js');
 const idList = require('../data/idList');
 const ids = require('../data/ids');
