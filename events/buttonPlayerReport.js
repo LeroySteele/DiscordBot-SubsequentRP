@@ -1,3 +1,5 @@
+// Users can click the button to open a report community rule breaks in a ticket, the corresponding permissions will be granted to the user and a messege will be sent in that new ticket
+
 const { Events, ButtonBuilder, ButtonStyle, ActionRowBuilder, EmbedBuilder, PermissionsBitField, ChannelType } = require('discord.js');
 const idList = require('../data/idList');
 const ids = require('../data/ids');
