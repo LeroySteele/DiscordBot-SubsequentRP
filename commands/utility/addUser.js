@@ -1,3 +1,6 @@
+// When a user opens a ticket only that user and administrators will have access to the ticket/channel. this command can add/grant access if additional people need to be added.
+// It first verifies it is a ticket based on the channel's parent category and then sends a messege stating which user has been added
+
 const { SlashCommandBuilder } = require('discord.js');
 const idList = require('../../data/idList');
 
